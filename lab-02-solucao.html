@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Pagina de exemplo estrutura basica </title>
+    <meta charset="utf-8">
+    <meta name="author" content="Ricardo">
+    <meta name="description" content="Carros top">
+    <meta name="keywords" content="Venda">
+    
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+
+    <div id="resultado"></div>
+
+
+    <script>
+
+        var primeiroNumero = 0
+        var segundoNumero = 0
+
+        obterNumero();
+
+        exibirValor(primeiroNumero);
+
+        function calcular(operacao) {
+
+            obterNumero();
+
+            switch (operacao) {
+                case '+':
+                    exibirValor(primeiroNumero + segundoNumero)
+                    break;
+                case '-':
+                    exibirValor(primeiroNumero - segundoNumero)
+                    break;
+                case '*':
+                    exibirValor(primeiroNumero * segundoNumero)
+                    break;
+
+                default:
+                    exibirValor(primeiroNumero / segundoNumero)
+                    break;
+            }
+        }
+
+        function obterNumero() {
+            var numero = parseInt(prompt('Informe um número:'))
+            if (primeiroNumero === 0)
+                primeiroNumero = numero
+            else
+                segundoNumero = numero
+        }
+
+        function exibirValor(valor) {
+            console.log(valor)
+            var dvOutput = document.getElementById('resultado')
+            dvOutput.innerText = ' ' + valor
+        }
+
+    </script>
+</body>
+
+</html>
